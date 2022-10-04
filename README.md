@@ -4,7 +4,7 @@
 # Implementacion
 
 + El programa esta diseñado como una maquina de estados, puede apreciar su funcionamiento en el diagrama que esta en "Preprocess.png".  
-+ Se utilizo una tabla hash basada en el capitulo 6.6 del libro "el lenguaje de programación c".  
++ Se utilizo una hash table basada en el capitulo 6.6 del libro "el lenguaje de programación c".  
 
 # ¿Como Utilizarlo?
 
