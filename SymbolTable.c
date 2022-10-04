@@ -69,29 +69,6 @@ struct nlist *install(char *name, char *defn)
 }
 
 
-/* struct nlist *unistall(char *name)
-{
-    struct nlist *np;
-    unsigned hashval;
-
-    if((np = lookup(name)) == NULL){
-        return NULL; // No se encontro en la tabla
-    }
-    else 
-    {
-        hashval = hash(name);
-        hashtab [hashval]= 
-    }
-    
-} */
-
-
-
-
-
-
-
-
 
 void undefine(char *s) {
     struct nlist *actual, *anterior;
@@ -116,6 +93,24 @@ void undefine(char *s) {
 
     }
 }
+
+/* struct nlist *unistall(char *name)
+{
+    struct nlist *np;
+    unsigned hashval;
+
+    if((np = lookup(name)) == NULL){
+        return NULL; // No se encontro en la tabla
+    }
+    else 
+    {
+        hashval = hash(name);
+        hashtab [hashval]= 
+    }
+    
+} */
+
+
 
 
 
