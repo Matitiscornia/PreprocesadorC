@@ -1,0 +1,75 @@
+digraph maquinaEstado{
+    rankdir = LR
+    fueraDePalabra[shape=box];
+    Numeral[shape=box];
+    Precomentario[shape=box];
+    d [shape=box];
+    de [shape=box];
+    def [shape=box];
+    defi [shape=box];
+    defin [shape=box];
+    define [shape=box];
+    u [shape=box];
+    un [shape=box];
+    und [shape=box];
+    unde [shape=box];
+    undef [shape=box];
+    IndicadorDef [shape=box];
+    IndicadorDef [shape=box];
+    valorDef [shape=box];
+
+
+    fueraDePalabra -> fueraDePalabra [ label="' '|'\ n'|'\ t' "];
+    fueraDePalabra -> Numeral [ label=" '#' "];
+    fueraDePalabra -> Precomentario [ label=" '/' "];
+    fueraDePalabra -> enPalabra [ label=" default "];
+    enPalabra -> Numeral [ label=" '#' "];
+    enPalabra -> Precomentario [ label=" '/' "];
+    enPalabra -> fueraDePalabra [ label="' '|'\ n'|'\ t' /\n variable2=lookup(palabra.nombre)" ];
+    enPalabra -> enPalabra [ label=" default /\n palabra.nombre[palabra.tamanio]=c; palabra.tamanio++;" ];
+    Precomentario -> comentarioLinea [ label=" '/' "];
+    Precomentario -> comentarioGrande [ label=" '*' "];
+    Precomentario -> enPalabra [ label= "default "];
+    comentarioLinea -> enPalabra [ label= " '\n' "];
+    comentarioGrande -> puedeCerrarComentario [ label= " '*' "];
+    puedeCerrarComentario -> comentarioCerrado [ label= " '/' "];
+    puedeCerrarComentario -> comentarioGrande [ label= " default "];
+    comentarioCerrado -> Numeral [ label=" '#' "];
+    comentarioCerrado -> enPalabra [ label= " default "];
+    Numeral -> d [ label= " 'd' "];
+    Numeral -> u [ label= " u "];
+    Numeral -> enPalabra [ label= " default "];
+    d -> de [ label= " 'e' "];
+    d -> enPalabra [ label= " default "];
+    de -> def [ label= " 'f' "];
+    de -> enPalabra [ label= " default "];
+    def -> defi [ label = " 'i' "];
+    def -> enPalabra [ label= " default "];
+    defi -> defin [ label = " 'n' "];
+    defi -> enPalabra [ label = " default "];
+    defin -> define [ label = " 'e' "];
+    defin -> enPalabra [ label = " default "];
+    define -> IndicadorDef [ label = " ' ' "];
+    define -> enPalabra [ label = " default "];
+    IndicadorDef -> valorDef [ label = " ' ' "];
+    IndicadorDef -> IndicadorDef [ label = " default /\n ind.nombre[ind.tam]=c; ind.tam++"];
+    valorDef -> enPalabra [ label=" ' '|'\ n'|'\ t' /\n variable=install(indicador.nombre,valor.nombre);"];
+    valorDef -> valorDef [ label = " default / valor[contador]=c && contador++; "];
+    u -> un [ label= " 'n' "];
+    u -> enPalabra [ label= " default "];
+    un -> und [ label= " 'd' "];
+    un -> enPalabra [ label= " default "];
+    und -> unde [ label= " 'e' "];
+    und -> enPalabra [ label= " default "];
+    unde -> undef [ label= " 'f' "];
+    unde -> enPalabra [ label= " default "];
+    undef -> IndicadorUndef [ label= " ' ' "];
+    undef -> enPalabra [ label= " default "];
+    IndicadorUndef -> enPalabra [ label=" ' '|'\ n'|'\ t' /\n undefine(indicadorUndef.nombre);  "];
+    IndicadorUndef -> IndicadorUndef [ label = " default /\n indicadorUndef.nombre[indicadorUndef.tamanio]=c; indicadorUndef.tamanio++;" ];
+
+
+
+
+
+}
