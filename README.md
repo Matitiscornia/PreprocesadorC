@@ -1,4 +1,4 @@
-# PreprocesadorC
+# Preprocesador de C
  Este programa se encarga de la etapa de preprocesamiento, previa a la compilación. Su funcionamiento consiste en eliminar comentarios y encargarse de las directivas #define y #undef.
 
 # Implementacion
