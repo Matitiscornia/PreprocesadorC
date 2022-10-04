@@ -8,4 +8,5 @@
 
 # ¿Como Utilizarlo?
 
- Para utilizar el programa tiene que abrir una consola y posicionarse en esta carpeta, luego para generar el ejecutable pruebe ingresando "make" o "mingw32-make".  Para probar su funcionamiento escribimos "preprocess.exe < Test.c", de esta forma le pasamos como entrada el archivo de prueba, también puede testearse con cualquier texto con sintaxis del lenguaje C que desee.
+ Para utilizar el programa tiene que abrir una consola y posicionarse en esta carpeta, luego para generar el ejecutable pruebe ingresando "make" o "mingw32-make".  Para probar su funcionamiento escribimos "preprocess.exe < Test.c", de esta forma le pasamos como entrada el archivo de prueba, también puede testearse con cualquier texto
+ con sintaxis del lenguaje C.
